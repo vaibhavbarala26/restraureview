@@ -1,0 +1,29 @@
+.map{
+  height: 100vh
+}
+/* Custom Scrollbar */
+/* Hide the scrollbar track */
+::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar thumb */
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  display: none; /* Makes the track invisible */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Style the scrollbar thumb */
+  border-radius: 10px; /* Circular thumb */
+  border: 2px solid transparent; 
+  /* Optional: space around thumb */
+}
+
+/* For Firefox: hide track by setting it the same color as the background */
