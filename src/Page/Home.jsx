@@ -22,7 +22,7 @@ const Home = () => {
   // Auth Check
   useEffect(() => {
     const auth = async () => {
-      const response = await fetch("http://localhost:1042/auth", {
+      const response = await fetch("https://restraureviewserver-3rdg.vercel.app/auth", {
         method: "POST",
         body: JSON.stringify({
           name: user.fullName,
@@ -94,7 +94,7 @@ const Home = () => {
     const fetchNearbyHotels = async () => {
       if (latitude && longitude) {
         try {
-          const response = await fetch(`https://restraureviewserver-klh4.vercel.app/top-nearby?latitude=${latitude}&longitude=${longitude}`, {
+          const response = await fetch(`https://restraureviewserver-3rdg.vercel.app/top-nearby?latitude=${latitude}&longitude=${longitude}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const Home = () => {
       }
       else{
         try {
-          const response = await fetch(`https://restraureviewserver-klh4.vercel.app/top-nearby?latitude=${23.816156}&longitude=${86.441976}`, {
+          const response = await fetch(`https://restraureviewserver-3rdg.vercel.app/top-nearby?latitude=${23.816156}&longitude=${86.441976}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",

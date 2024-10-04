@@ -17,7 +17,7 @@ const NewIndividual = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://restraureviewserver-klh4.vercel.app/newhotel?id=${id}`, {
+        const response = await fetch(`https://restraureviewserver-3rdg.vercel.app/newhotel?id=${id}`, {
           method: 'GET',
           credentials: 'include',
           headers: {
@@ -54,7 +54,7 @@ const NewIndividual = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://restraureviewserver-klh4.vercel.app/hotel-review', {
+      const response = await fetch('https://restraureviewserver-3rdg.vercel.app/hotel-review', {
         method: 'POST',
         body: JSON.stringify({
           id,

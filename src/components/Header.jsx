@@ -19,7 +19,7 @@ const Header = () => {
       }
 
       try {
-        const res = await fetch(`https://restraureviewserver-klh4.vercel.app/hotel?search=${searchInput}`, {
+        const res = await fetch(`https://restraureviewserver-3rdg.vercel.app//hotel?search=${searchInput}`, {
           headers: {
             'Content-Type': 'application/json',
           },

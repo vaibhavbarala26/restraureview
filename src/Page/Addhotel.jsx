@@ -54,7 +54,7 @@ const AddRestaurantForm = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:1042/add-hotel', {
+      const response = await fetch('https://restraureviewserver-3rdg.vercel.app/add-hotel', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

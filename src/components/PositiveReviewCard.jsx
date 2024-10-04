@@ -20,7 +20,7 @@ const ReviewCard = ({ reviews }) => {
   const handleLikeDislike = async (response) => {
     const email = user.primaryEmailAddress.emailAddress; // Get the email of the current user
     try {
-      const res = await fetch("http://localhost:1042/like", {
+      const res = await fetch("https://restraureviewserver-3rdg.vercel.app/like", {
         method: "PUT",
         body: JSON.stringify({ id, response, review_id: reviews._id, email: email }),
         headers: { "Content-type": "application/json" },
