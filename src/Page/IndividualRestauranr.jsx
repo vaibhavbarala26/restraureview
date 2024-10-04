@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import ReviewCard from '../components/PositiveReviewCard';
 import NeagtiveReviewCard from '../components/NeagtiveReviewCard';
-import { useClerk } from '@clerk/clerk-react';
+import { useClerk, useUser } from '@clerk/clerk-react';
 import { useParams, Link } from 'react-router-dom';
 import map from "../assets/map.svg";
 import Skeleton from 'react-loading-skeleton';  // Import Skeleton
@@ -16,7 +16,7 @@ const Individual = () => {
   const [negativeReviews, setNegativeReviews] = useState([]);
   const [restaurantData, setRestaurantData] = useState(null); // To store fetched restaurant data
   const { id } = useParams(); // Extract the ID from URL params
-  
+  const { isLoaded, isSignedIn } = useUser();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -167,9 +167,18 @@ const Individual = () => {
                 ))}
               </div>
             </div>
+            {isSignedIn ? (<>
+              <button type="submit" className="bg-black text-white rounded-full py-2 px-4 mt-2 hover:bg-gray-800">
+              Submit
+            </button>
+            </>):(<>
+            <Link to={"/login"}>
             <button type="submit" className="bg-black text-white rounded-full py-2 px-4 mt-2 hover:bg-gray-800">
               Submit
             </button>
+            </Link>
+            </>)}
+           
           </form>
         </div>
 

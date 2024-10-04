@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import { useParams } from 'react-router-dom';
-import { useClerk } from '@clerk/clerk-react';
+import { useClerk, useUser } from '@clerk/clerk-react';
 
 const NeagtiveReviewCard = ({ reviews }) => {
+  const { isLoaded, isSignedIn } = useUser();
   const [likeColor, setLikeColor] = useState("#000000");
   const [dislikeColor, setDislikeColor] = useState("#000000");
   const [likes, setLikes] = useState(reviews.likes || 0);
@@ -76,20 +77,25 @@ const NeagtiveReviewCard = ({ reviews }) => {
 
       <div className="flex justify-between items-center mt-3">
         <div className="flex items-center space-x-2">
-          <button
-            onClick={() => handleLikeDislike("like")}
-            className="flex items-center"
-            style={{ color: likeColor }}
-          >
-            <span className="mr-1">👍</span> Like
-          </button>
-          <button
-            onClick={() => handleLikeDislike("dislike")}
-            className="flex items-center"
-            style={{ color: dislikeColor }}
-          >
-            <span className="mr-1">👎</span> Dislike
-          </button>
+        {isSignedIn ? (
+            <>
+              <button onClick={() => handleLikeDislike("like")} className="flex items-center text-red-500 hover:text-red-700 transition duration-200">
+                <span className="mr-1">👍</span> Like
+              </button>
+              <button onClick={() => handleLikeDislike("dislike")} className="flex items-center text-blue-500 hover:text-blue-700 transition duration-200">
+                <span className="mr-1">👎</span> Dislike
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to={"/login"} className="flex items-center text-blue-500 hover:text-blue-700 transition duration-200">
+                <span className="mr-1">👍</span> Like
+              </Link>
+              <Link to={"/login"} className="flex items-center text-blue-500 hover:text-blue-700 transition duration-200">
+                <span className="mr-1">👎</span> Dislike
+              </Link>
+            </>
+          )}
         </div>
         <div className="flex items-center space-x-2">
           <span className="text-gray-600">Likes: {likes}</span>
