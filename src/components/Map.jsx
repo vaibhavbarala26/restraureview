@@ -108,7 +108,7 @@ const Map = () => {
         />
 
         {/* Current Location Marker */}
-        <Marker position={[23.8193062, 86.4353003]} customIcon={customIconw} >
+        <Marker position={[23.8193062, 86.4353003]} icon={customIconw} >
           <Popup>
             <div>
               <h2>You are here</h2>
