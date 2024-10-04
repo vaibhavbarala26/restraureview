@@ -15,6 +15,7 @@ import Landing from './Page/Landing.jsx';
 import SearchResults from './Page/SearchResults.jsx';
 import NewIndividual from './Page/NewIndivdualpage.jsx';
 import AddRestaurantForm from './Page/Addhotel.jsx';
+import FullMap from './Page/fullMap.jsx';
 const { VITE_CLERK_PUBLISHABLE_KEY } = import.meta.env;
 const PUBLISHABLE_KEY = VITE_CLERK_PUBLISHABLE_KEY;
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       </>
     )
   },
+  {
+    path:"/map",
+    element:<FullMap></FullMap>
+  }
 
  
   

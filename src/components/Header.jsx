@@ -95,14 +95,15 @@ const Header = () => {
       </div>
 
       {/* Add Restaurant Button */}
+      
+
+      {/* User Section */}
+      <div className="flex flex-row items-center gap-3">
       <div>
         <Link to="/add">
           <div className="rounded-full border-2 py-2 px-3 text-1xl bg-black text-white">Add+</div>
         </Link>
       </div>
-
-      {/* User Section */}
-      <div className="flex flex-row items-center gap-3">
         <UserButton />
         <div className="bg-black text-white py-2 px-3 rounded-full">
           <SignOutButton />

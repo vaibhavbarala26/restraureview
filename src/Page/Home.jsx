@@ -6,7 +6,7 @@ import LocationGranted from '../components/locationgranted';
 import LocationDenied from '../components/locationDenied';
 import LocationPrompted from '../components/locationprompted';
 import Map from '../components/Map';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const { user } = useClerk();
@@ -138,7 +138,7 @@ const Home = () => {
   }, [latitude, longitude]); // Fetch only when lat/long changes
 
   return (
-    <div className="flex flex-col h-screen  ">
+    <div className="flex flex-col h-screen   ">
       <Header />
       <div className="flex flex-grow">
         <div className="px-10 md:px-16 h-full md:w-1/3 border-r-2  ">
@@ -147,6 +147,7 @@ const Home = () => {
           {userPermission === 'prompt' && <LocationPrompted />}
         </div>
         <div className="w-2/3 h-full relative ">
+        <Link to={"/map"} > <button className='p-3 border-2'>full page map</button> </Link>
           <Map nearbyHotels={nearbyHotels} />
         </div>
       </div>

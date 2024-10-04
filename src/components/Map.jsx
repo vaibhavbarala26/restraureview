@@ -22,6 +22,7 @@ const customIconw = new L.Icon({
 
 const Map = () => {
   // State for nearby hotels and user location
+ 
   const [nearbyHotels, setNearbyHotels] = useState([]);
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
@@ -100,6 +101,7 @@ const Map = () => {
 
   return (
     <div className="w-full h-full">
+   
       <MapContainer center={[23.8193062, 86.4353003]} zoom={14} className="w-full h-full">
         {/* Tile Layer */}
         <TileLayer
