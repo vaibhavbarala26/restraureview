@@ -13,6 +13,12 @@ const customIcon = new L.Icon({
   iconAnchor: [16, 32],
   popupAnchor: [0, -32],
 });
+const customIconw = new L.Icon({
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/9131/9131546.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
 
 const Map = () => {
   // State for nearby hotels and user location
@@ -102,7 +108,7 @@ const Map = () => {
         />
 
         {/* Current Location Marker */}
-        <Marker position={[23.8193062, 86.4353003]} >
+        <Marker position={[23.8193062, 86.4353003]} customIcon={customIconw} >
           <Popup>
             <div>
               <h2>You are here</h2>
