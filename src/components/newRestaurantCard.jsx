@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import baha from '../assets/bahamas.jpeg'; // Default image
 import add from '../assets/address.svg'; // Optional address icon
 
-const RestaurantCard = ({ restaurant }) => {
+const NewRestaurantCard = ({ restaurant }) => {
   return (
-    <Link to={`/restaurant/${restaurant._id}`}>
+    <Link to={`/newrestaurant/${restaurant._id}`}>
       <div className="border rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-xl">
         {/* Restaurant Image */}
         {restaurant.photo ? (
@@ -40,4 +40,4 @@ const RestaurantCard = ({ restaurant }) => {
   );
 };
 
-export default RestaurantCard;
+export default NewRestaurantCard;

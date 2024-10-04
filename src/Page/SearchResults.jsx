@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import RestaurantCard from '../components/RestaurantCard';
+import NewRestaurantCard from '../components/newRestaurantCard';
 const SearchResults = () => {
     const [data , setData] = useState([])
     const location = useLocation(); // Get the current location object
@@ -36,7 +37,7 @@ const SearchResults = () => {
     <div className='p-16 flex flex-col gap-2'>
       {data.map((dat)=>(
         <>
-        <RestaurantCard restaurant={dat}></RestaurantCard>
+        <NewRestaurantCard restaurant={dat}></NewRestaurantCard>
         </>
       ))}
     </div>
