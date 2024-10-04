@@ -56,7 +56,7 @@ const Map = () => {
     const fetchNearbyHotels = async () => {
       if (latitude && longitude) {
         try {
-          const response = await fetch(`http://localhost:1042/hotel-nearby?latitude=${latitude}&longitude=${longitude}`, {
+          const response = await fetch(`https://restraureviewserver-klh4.vercel.app/hotel-nearby?latitude=${latitude}&longitude=${longitude}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
